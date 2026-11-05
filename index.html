@@ -6,8 +6,39 @@
 </head>
 <body>
   <h1>Quiz Automation App</h1>
-  <button id="start-btn">Start Quiz</button>
-  <h3 id="result"></h3>
+
+  <section id="menu">
+    <label for="category-filter">Quiz category:</label>
+    <select id="category-filter">
+      <option value="">All categories</option>
+    </select>
+    <button id="start-btn">Start Quiz</button>
+    <p id="menu-message"></p>
+    <h3>Manage Questions</h3>
+<form id="question-form">
+  <input id="q-text" placeholder="Question text" required>
+  <input id="q-options" placeholder="Options, separated by commas" required>
+  <input id="q-correct" type="number" min="1" placeholder="Correct option number" required>
+  <input id="q-category" placeholder="Category" required>
+  <button type="submit">Save Question</button>
+</form>
+<p id="form-message"></p>
+<ul id="question-list"></ul>
+  </section>
+
+  <section id="quiz" hidden>
+    <p id="progress"></p>
+    <h2 id="question-text"></h2>
+    <div id="options"></div>
+  </section>
+
+  // Result section
+  <section id="result-section" hidden>
+    <h3 id="result"></h3>
+    <button id="back-btn">Back to menu</button>
+    <button id="retry-btn" hidden>Retry wrong answers</button>
+  </section>
+
   <h3>History</h3>
   <ul id="history"></ul>
   <script src="script.js"></script>
